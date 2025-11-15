@@ -1,0 +1,28 @@
+# TDTR training data inputs
+
+# thermal model parameters
+Xi_t=(20 30)
+C_t=(2.3 2.6)
+k_t=(170 250)
+t_t=(70 100)
+R_12=(1 20)
+C_i=(2.2 2.6)
+k_i=(10 100)
+t_i=(400 600)
+R_23=(1 20)
+C_s=(1.4 1.8)
+k_s=(140 160)
+r_pump=(10 14)
+r_probe=(6 10)
+t_delay=(-1.75 1.75)
+t_res=(13 17)
+
+# simulated noise parameters
+SNR=5000
+maxNoise=0.02
+pct_pinkNoise=50
+
+# data parameters
+N_data=100000
+pct_dev=10
+pct_test=10
