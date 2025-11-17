@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# thermal model parameters
 Xi_t=(20 30)
 C_t=(2.3 2.6)
 k_t=(170 250)
@@ -16,10 +17,12 @@ r_probe=(6 10)
 t_delay=(-1.75 1.75)
 t_res=(13 17)
 
+# simulated noise parameters
 SNR=5000
 maxNoise=0.02
 pct_pinkNoise=50
 
+# data parameters
 N_data=100000
 pct_dev=10
 pct_test=10
