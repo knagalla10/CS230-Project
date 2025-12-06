@@ -23,14 +23,14 @@ def build_model(hp):
     res_block_flag=False
     
     # dense_1 layer
-    x = Dense(512, activation, dtype="float32", name="dense_1")(inputs)
+    x = Dense(256, activation, dtype="float32", name="dense_1")(inputs)
 
     # Hidden blocks
     for i in range(num_hidden):
         # Build block_i
         l=i+2 # hidden layer index
         x_skip = x # initiate residual connection
-        x = Dense(512, dtype="float32", name=f"dense_{l}")(x) # dense_l layer
+        x = Dense(256, dtype="float32", name=f"dense_{l}")(x) # dense_l layer
         if res_block_flag:
             x = Add()([x, x_skip]) # implement residual connection
         x = BatchNormalization(dtype="float32", name=f"BN_{l}")(x) # BN_l layer
@@ -74,4 +74,5 @@ tuner.search(
 )
 
 best_hp = tuner.get_best_hyperparameters()[0]
+
 best_model = tuner.get_best_models(num_models=1)
